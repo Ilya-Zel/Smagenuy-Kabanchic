@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Грузинская кухня</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            background-color: #6f4c3e; /* Коричневый цвет */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .nav {
+            margin: 15px 0;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .dish {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .dish img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .dish h3 {
+            margin: 10px 0;
+            color: #6f4c3e; /* Коричневый цвет */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Ресторан грузинской кухни</h1>
+        <div class="nav">
+            <a href="/menu">Меню</a>
+            <a href="/about">О нас</a>
+            <a href="/reviews">Отзывы</a>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div class="dish">
+            <img src="khachapuri.jpg" alt="Хачапури">
+            <h3>Хачапури</h3>
+            <p>Традиционный грузинский хлеб с сыром.</p>
+        </div>
+        <div class="dish">
+            <img src="khinkali.jpg" alt="Хинкали">
+            <h3>Хинкали</h3>
+            <p>Грузинские пельмени с мясом и специями.</p>
+        </div>
+        <div class="dish">
+            <img src="mtsvadi.jpg" alt="Мцвади">
+            <h3>Мцвади</h3>
+            <p>Грузинские шашлыки на гриле.</p>
+        </div>
+        <div class="dish">
+            <img src="pkhali.jpg" alt="Пхали">
+            <h3>Пхали</h3>
+            <p>Овощная закуска с орехами и специями.</p>
+        </div>
+    </div>
+
+</body>
+</html>
