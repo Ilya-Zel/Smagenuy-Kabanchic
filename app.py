@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.secret_key = 'your_secret_key'  # Задайте секретный ключ для использования сессий
+app.secret_key = 'your_secret_key'
 db = SQLAlchemy(app)
 
 # Модель пользователя
@@ -13,23 +13,29 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
 
-# Создание базы данных
 with app.app_context():
     db.create_all()
 
 @app.route('/')
 def home():
-    # Отображаем главную страницу с профилем пользователя, если он вошел
-    user_email = session.get('user_email')
-    return render_template('main.html', user_email=user_email)
+    if 'user_email' in session:
+        return redirect(url_for('menu'))
+    return redirect(url_for('register'))
 
 @app.route('/menu')
 def menu():
-    return render_template('menu.html')
+    dishes = [
+        {"name": "Хачапури по-аджарски", "price": "500 руб."},
+        {"name": "Шашлык из баранины", "price": "700 руб."},
+        {"name": "Чахохбили", "price": "450 руб."},
+        {"name": "Сациви", "price": "550 руб."}
+    ]
+    return render_template('menu.html', dishes=dishes, active_page="menu")
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    # Передаем параметр active_page, чтобы выделить "О нас"
+    return render_template('about.html', active_page="about")
 
 @app.route('/reviews')
 def reviews():
@@ -42,8 +48,8 @@ def login():
         password = request.form['password']
         user = User.query.filter_by(email=email, password=password).first()
         if user:
-            session['user_email'] = user.email  # Сохраняем электронную почту пользователя в сессии
-            return redirect(url_for('home'))  # Перенаправляем на главную страницу
+            session['user_email'] = user.email
+            return redirect(url_for('menu'))
         else:
             return "Неверные учетные данные"
     return render_template('login.html')
@@ -61,7 +67,7 @@ def register():
 
 @app.route('/logout')
 def logout():
-    session.pop('user_email', None)  # Удаляем электронную почту пользователя из сессии
+    session.pop('user_email', None)
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
