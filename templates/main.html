@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .nav {
+            margin-bottom: 20px;
+        }
+
+        .nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #6f4c3e;
+        }
+
+        .profile {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <a href="/menu">Меню</a>
+        <a href="/about">О нас</a>
+        <a href="/reviews">Отзывы</a>
+        {% if user_email %}
+            <span>Добро пожаловать, {{ user_email }}!</span>
+            <a href="/logout">Выйти</a>
+        {% else %}
+            <a href="/login">Вход</a>
+            <a href="/register">Регистрация</a>
+        {% endif %}
+    </div>
+
+    <h1>Добро пожаловать в наш ресторан грузинской кухни!</h1>
+    <p>Здесь вы можете узнать больше о нашем меню, о нас и оставить отзыв.</p>
+
+</body>
+</html>
