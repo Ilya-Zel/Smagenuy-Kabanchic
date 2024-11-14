@@ -3,56 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ресторан</title>
+    <title>Тот самый кабанчик</title>
+    <!-- Подключаем шрифты из Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Courgette&family=Merriweather:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Merriweather', serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f5f0e1; /* Светло-коричневый фон */
         }
+
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #333;
+            background-color: #6f4f1f; /* Темно-коричневый цвет для фона */
             color: white;
-            padding: 10px 20px;
+            padding: 15px 30px;
         }
+
+        /* Применяем необычный шрифт для логотипа */
         .logo {
-            font-size: 24px;
+            font-family: 'Pacifico', cursive;
+            font-size: 40px;
             font-weight: bold;
+            color: #d6a15c; /* Золотисто-коричневый для логотипа */
         }
+
         nav {
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
+
         nav a {
             text-decoration: none;
             color: white;
-            font-size: 18px;
+            font-size: 20px;
+            font-weight: 600;
             transition: color 0.3s;
         }
+
         nav a:hover {
-            color: #ff6600;
+            color: #d6a15c; /* Золотистый цвет при наведении */
         }
+
+        /* Применяем необычный шрифт для кнопки "Профиль" */
         .profile-btn {
-            background-color: #ff6600;
-            padding: 10px 20px;
-            border-radius: 5px;
+            font-family: 'Courgette', cursive;
+            background-color: #d6a15c; /* Золотисто-коричневый цвет для кнопки */
+            padding: 12px 25px;
+            border-radius: 8px;
             text-decoration: none;
             color: white;
             font-weight: bold;
+            transition: background-color 0.3s;
         }
+
         .profile-btn:hover {
-            background-color: #e65c00;
+            background-color: #a6733b; /* Темно-золотистый оттенок при наведении */
+        }
+
+        /* Применяем шрифт для заголовков секций */
+        section h2 {
+            font-family: 'Roboto Slab', serif;
+            color: #6f4f1f; /* Коричневый цвет для заголовков */
+            font-size: 28px;
+        }
+
+        /* Применяем шрифт для текста в секциях */
+        section p {
+            font-family: 'Merriweather', serif;
+            color: #3e2a1d; /* Темно-коричневый для текста */
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 50px 20px;
+            margin: 20px;
+            background-color: #fff6e5; /* Светлый оттенок для разделов */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">Ресторан</div>
+    <div class="logo">Тот самый кабанчик</div>
     <nav>
         <a href="#menu">Меню</a>
         <a href="#about">О нас</a>
@@ -60,6 +99,21 @@
     </nav>
     <a href="#profile" class="profile-btn">Профиль</a>
 </header>
+
+<section id="menu">
+    <h2>Меню</h2>
+    <p>Наше меню включает лучшие блюда грузинской кухни, от хачапури до шашлыков. Каждый найдет что-то по вкусу!</p>
+</section>
+
+<section id="about">
+    <h2>О нас</h2>
+    <p>Наш ресторан предлагает атмосферу уюта и традиционного грузинского гостеприимства. Приходите и наслаждайтесь настоящими грузинскими блюдами.</p>
+</section>
+
+<section id="reviews">
+    <h2>Отзывы</h2>
+    <p>Наши гости всегда довольны качеством и атмосферой. Мы рады каждому!</p>
+</section>
 
 </body>
 </html>
